@@ -10,12 +10,12 @@
     <div class="container-fluid m-0 p-0">
       <div class="row row-cols-2 g-0" style="height:100vh">
         <div class="h-100 bg-info d-flex align-items-center justify-content-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5000 5000">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42">
             <g id="primera"></g>
           </svg>
         </div>
         <div class="h-100 bg-success d-flex align-items-center justify-content-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5000 5000">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42">
             <g id="segunda"></g>
           </svg>          
         </div>
@@ -25,13 +25,19 @@
       const data = [40,10,30,60,12,20];
       const alumnas = 13;
       const alumnos = 0;
-      //Prestamos del Sistema nacional de bibliotecas publicas, ejemplares impresos vs digitales 2023
-      const impreso = 753.346;
-      const digital = 204.644;
+      //Prestamos en una libreria
+      const impreso = 75;
+      const digital = 20;
       let cero = document.querySelector("#primera");
-      cero.innerHTML = `<circle cx="2500" cy="2500" r="${impreso}" />`;
+      cero.innerHTML = `<circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
+  <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
+
+  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray="${impreso} ${100-impreso}" stroke-dashoffset="0"></circle><text x="18" y="23" font-size= "5"> ${"75%"}</text>`
       let uno = document.querySelector("#segunda");
-      uno.innerHTML = `<circle cx="2500" cy="2500" r="${digital}" />`;
+      uno.innerHTML = `<circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
+  <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
+
+  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray="${digital} ${100-digital}" stroke-dashoffset="0"></circle><text x="18" y="23" font-size= "5">${"20%"}</text>`;
     </script>
   </body>
 </html>
